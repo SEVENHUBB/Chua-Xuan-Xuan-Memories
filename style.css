@@ -6,58 +6,71 @@ body {
   line-height: 1.6;
 }
 
-/* 首页 */
+/* =========================
+   HOME CONTAINER
+========================= */
 .container {
   padding: 60px 20px;
   text-align: center;
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
 }
 
-/* 标题 */
+/* Title */
 .title {
   font-size: 42px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-/* 副标题 */
+/* Subtitle */
 .subtitle {
   color: #888;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   font-size: 14px;
 }
 
-/* 你那段很长的文字 */
-.container p {
-  max-width: 750px;
+/* Long text box */
+.desc-box {
+  max-width: 800px;
   margin: 0 auto 50px auto;
   font-size: 15px;
   color: #555;
   line-height: 1.8;
-
-  /* 关键：让它变“好读” */
-  white-space: pre-line;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
-/* 卡片 */
+/* =========================
+   CARD GRID (3 PER ROW)
+========================= */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Card style */
 .card {
   background: #ffffff;
   padding: 20px;
-  margin: 20px auto;
-  width: 280px;
   border-radius: 14px;
-
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-
   transition: 0.3s ease;
+  text-align: left;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
-/* 按钮 */
+/* =========================
+   BUTTON
+========================= */
 button {
   padding: 8px 14px;
   border: none;
@@ -73,15 +86,7 @@ button:hover {
   background: #555;
 }
 
-/* 页面 */
-.page {
-  display: none;
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* 返回按钮 */
+/* Back button */
 .back {
   background: none;
   border: none;
@@ -91,32 +96,33 @@ button:hover {
   margin-bottom: 20px;
 }
 
-/* 标题 */
+/* =========================
+   PAGES
+========================= */
+.page {
+  display: none;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
 .page h2 {
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
-/* 视频 */
-video {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* 描述 */
+/* Description */
 .desc {
   font-size: 15px;
   color: #555;
   margin-bottom: 25px;
-  max-width: 700px;
+  max-width: 800px;
 }
 
-/* 照片墙 */
+/* =========================
+   GALLERY (PHOTOS)
+========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -133,4 +139,26 @@ video {
 
 .gallery img:hover {
   transform: scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* tablet */
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 32px;
+  }
 }

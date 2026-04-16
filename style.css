@@ -7,7 +7,7 @@ body {
 }
 
 /* =========================
-   HOME CONTAINER
+   CONTAINER
 ========================= */
 .container {
   padding: 60px 20px;
@@ -45,16 +45,16 @@ body {
 }
 
 /* =========================
-   CARD GRID (3 PER ROW)
+   3 CARDS PER ROW (ONLY LAPTOP)
 ========================= */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* fixed 3 columns */
   gap: 20px;
   margin-top: 20px;
 }
 
-/* Card style */
+/* Card */
 .card {
   background: #ffffff;
   padding: 20px;
@@ -97,7 +97,7 @@ button:hover {
 }
 
 /* =========================
-   PAGES
+   PAGE SYSTEM
 ========================= */
 .page {
   display: none;
@@ -121,7 +121,7 @@ button:hover {
 }
 
 /* =========================
-   GALLERY (PHOTOS)
+   GALLERY
 ========================= */
 .gallery {
   display: grid;
@@ -139,26 +139,4 @@ button:hover {
 
 .gallery img:hover {
   transform: scale(1.03);
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-/* tablet */
-@media (max-width: 900px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* mobile */
-@media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: 1fr;
-  }
-
-  .title {
-    font-size: 32px;
-  }
 }

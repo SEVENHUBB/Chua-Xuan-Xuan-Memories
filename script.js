@@ -28,3 +28,25 @@ function goHome() {
     window.scrollTo(0, scrollY);
   }, 0);
 }
+
+function openImage(img) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  lightbox.style.display = "flex";
+  lightboxImg.src = img.src;
+}
+
+function closeImage() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".gallery img");
+
+  images.forEach(img => {
+    img.addEventListener("click", function () {
+      openImage(this);
+    });
+  });
+});

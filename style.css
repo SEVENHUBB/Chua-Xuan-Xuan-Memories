@@ -142,3 +142,107 @@ video {
 .gallery img:hover {
   transform: scale(1.03);
 }
+
+#home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; /* 👈 这里就是“分隔感” */
+  max-width: 950px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* 让标题文字不进 grid */
+#home .title,
+#home .subtitle,
+#home .desc {
+  grid-column: 1 / -1;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  margin: 0;
+
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+
+  /* 👇 关键：让卡片更“分开一点高级感” */
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* hover 更明显一点点 */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+}
+
+.page {
+  display: none;
+  animation: fade 0.3s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* hide home when page open */
+.hidden {
+  display: none;
+}
+
+/* page default hidden */
+.page {
+  display: none;
+}
+
+/* page active */
+.page.active {
+  display: block;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* IMPORTANT: prevent weird stretching */
+.card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* 让标题占满一整行 */
+#home .title,
+#home .subtitle,
+#home .desc {
+  grid-column: 1 / -1;
+}
+
+/* CARD FIX（最重要） */
+.card {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
